@@ -36,9 +36,9 @@ wget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v29
 chmod +x $HOME/zetacored 
 mv $HOME/zetacored $HOME/go/bin
 
-zetacored config chain-id zetachain_7000-1
-zetacored config keyring-backend file
-zetacored config node tcp://localhost:${CUSTOM_PORT}657
+zetacored config set client chain-id zetachain_7000-1
+zetacored config set client keyring-backend file
+zetacored config set client node tcp://localhost:${CUSTOM_PORT}657
 zetacored init $MONIKER --chain-id=zetachain_7000-1
 
 curl -L https://snapshots.nodejumper.io/zetachain/genesis.json > $HOME/.zetacored/config/genesis.json
